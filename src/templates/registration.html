@@ -1,0 +1,89 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>eDonor</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<script type="text/javascript" src="{% static 'js/external.js' %}"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.r-body
+		{
+			background: white;
+			padding: 10px;
+		}
+		.r-body .row
+		{
+			margin: 10px 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="r-body">
+		<div style="width: 100%; margin-bottom: 10px;" align="left">
+			<img src="{% static 'images/2.png' %}">
+		</div>
+		<div style="padding: 30px 70px;">		
+			<p align="justify" style="color: gray;">
+			Sizi leykoz(qan xərçəngi) xəstəsi olan balacalara və yaşlılara qanınızı verməyə çağırırıq. Əslində insana aid olan bir şeyi vermək çətin gəlir amma ilk növbədə qan vurulmazsa öləcək bir xəstənin sizin verdiyiniz qanla həyata qayıtması ilə sizə verdiyi mənəvi rahatlıq ölçüsüzdür. Digər tərəfdən qan vermək insanda qan hüceyrələrinin təzələnməsinə, qandakı yağın miqdarının azalmasına,baş ağrıları,stress, yüksək qan-damar təzyiqi, yorğunluq kimi narahatlıqların azalmasına yaxşı təsir edir. Qan verən insanda ürək xəstəliklərinin baş vermə riski 90% aşağı düşür.
+
+
+</p>
+			<p align="justify" style="color: gray;">
+			Qan vermək üçün bu qədər səbəb varkən xəstəxanada qan gözləyən xəstəni və o xəstənin yaxınlarını çarəsiz qoymayın!!!
+Bəzi insanların qan vermək imkanı olmur. 2 əsas səbəbdən qan vermək olmur. Birincisi, qan vermək səhhətinizə zərər yetirə bilərsə o zaman sağlamlağınızı riskə atmamaq üçün donor olmağınıza icazə verilmir. İkinci, əgər donorun qanı xəstəyə zərər verəcəksə o zaman donorluğa icazə verilmir.</p>
+			<p align="justify" style="color: gray;">
+			Aşağadakı xəstəliklərdən birinə tutulan şəxs sağalsada qan verməsinə icazə verilmir.
+
+QİCS
+Siflis
+Virus Hepatitləri
+Vərəm
+Qan xəstəlikləri
+Onkoloji xəstəliklər
+Yaşı 60-dan yuxarı olmayan şəxslər
+
+Aşağadakı hallarda müəyyən zaman fasiləsindən sonra qan verəyə icazə verilir.
+
+Diş çəkilməsi (10gün)
+Qrip ORVİ
+Mensturasiya (5gün)
+Abort (6 ay)
+Doğuş (1 il)
+Cərrahi əməliyyat (6 ay)
+Antibiotik qəbulu (72 sutka)
+Alkoqol qəbulu (48 saat)
+
+Özünü yaxşı hiss etmədikdə, infeksiya keçirdikdə, səyahətə hazırlaşarkən, hər hansı bir xəstəliklə bağlı dərman qəbul etdikdə, ürək xəstəlikləri olduqda, pirsinq, tatu etdikdə, digər dibbi müayinələr keçirdikdə də qan vermək olmaz.
+
+Yuxarıdakı məlumatları oxudunsa və qan verməməyə heç bir səbəb yoxdursa bizimlə əlaqə saxla_
+Tel- 055 596 68 95 ( wp)
+Insta- qan_ver
+Fb- qan.ver
+
+TƏŞƏKKÜRLƏR.</p>
+		</div>
+		<div class='col-sm-6 col-sm-offset-3 text-center'>
+			<h1>Register</h1>
+			<hr/>
+			<form class='text-left' method="post" action="{% url 'register' %}">
+			{% csrf_token %}
+			{{ form|crispy }}
+
+			<input type="submit" value="Register" />
+			<input type="hidden" name="next" value="{{ next }}" />
+			</form>
+			<p>Did you need to <a href='{% url "login" %}'>Login</a>?
+			</div>	
+
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

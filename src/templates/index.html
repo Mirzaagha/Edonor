@@ -1,0 +1,133 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>eDonor</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<script type="text/javascript" src="{% static 'js/external.js' %}"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="item logo-field">
+			<img src="{% static 'images/2.png' %}">
+		</div>
+		<div class="item call-field">
+			<i class="fa fa-phone"></i>
+			<span>184</span>
+		</div>
+		<!-- <div class="item search-field">
+			<div class="input-container">
+				<input type="text" name="search" placeholder="Axtar">
+				<i class="fa fa-search"></i>
+			</div>
+		</div> -->
+		<div class="item icon-field">
+			<i class="fa fa-facebook"></i>
+			<!-- <i class="fa fa-twitter"></i> -->
+			<!-- <i class="fa fa-instagram"></i> -->
+			<!-- <i class="fa fa-pinterest-p"></i> -->
+			<!-- <i class="fa fa-google-plus"></i> -->
+		</div>
+		<div class="item login-field">
+			<button class="btn btn-default"><i class="fa fa-user"></i> Giriş et</button>
+		</div>
+	</div>
+	<div class="navbar">
+		<div class="nav">
+			<div class="nav-btn">
+			  	<label for="nav-check">
+			  	  	<span></span>
+			  	  	<span></span>
+			  	  	<span></span>
+			  	</label>
+			</div>
+			<input type="checkbox" id="nav-check">
+			<div class="nav-links">
+			 	<a href="#" class="link" target="_blank">Haqqımızda</a>
+			 	<a href="#" class="link" target="_blank">Statistikalar</a>
+			 	<a href="#" class="link" target="_blank">Xəbərlər</a>
+			 	<a href="#" class="link" target="_blank">Partnyrolarımız</a>
+			 	<a href="#" class="link" target="_blank">Əlaqə</a>
+			 	<!-- <button class="btn btn-default">Donor ol</button> -->
+			 	
+			</div>
+		</div>
+	</div>
+  <div class="content-body">
+    <div class="slider">
+      <div index="1" class="slider-item active-slide-item" style="display: block;">
+        <img src="{% static 'images/8.jpg' %}">
+      </div>
+      <div index="2" class="slider-item">
+        <img src="{% static 'images/8.jpg' %}">
+      </div>
+      <div index="3" class="slider-item">
+        <img src="{% static 'images/8.jpg' %}">
+      </div>
+      <div class="pager" align="center">
+        <div index="1" class="pager-item active-pager-item"></div>
+        <div index="2" class="pager-item"></div>
+        <div index="3" class="pager-item"></div>
+      </div>
+    </div>
+  </div>
+</body>
+			{% block content %}
+				{% endblock %}
+<div class="e-modal" align="center">
+	<div class="e-modal-content">
+		<div class="e-modal-body">
+			<div class="e-modal-hide">
+				<i class="fa fa-times"></i>
+			</div>
+			<div style="width: 100%; margin-bottom: 10px;" align="left">
+				<img src="{% static 'images/2.png' %}">
+			</div>
+			
+			<!-- <div class="form">
+				<div class="input-item">
+					<input type="text" name="" placeholder="Adınız">
+				</div>
+				<div class="input-item">
+					<input type="text" name="" placeholder="Soyadınız">
+				</div>
+				<div class="input-item">
+					<input type="text" name="" placeholder="Fin kod">
+				</div>
+				<div class="input-item">
+					<input type="email" name="" placeholder="Elektron poçt ünvan">
+				</div>
+				<div align="left" style="padding: 0px 10px">
+					<input type="checkbox" name="" style="float: left;">
+					<span style="position: relative; font-size: 14px; top: 3px; left: 6px; color: #e1454e;">Məni xatırla</span>
+				</div>
+				<div class="input-item" style="margin-top: 10px;">
+					<a class="btn btn-default e-btn"> Hesab yarat</a>
+					
+				</div> -->
+			</div>
+		</div>
+	</div>
+</div>
+</html>
+<!-- <script type="text/javascript">
+    $('.pager .pager-item').click(function() 
+    {
+        if($(this).hasClass('active-slide-item')) return false;
+        var index = $(this).attr('index');
+        $(this).parent('div').find('.active-pager-item').removeClass('active-pager-item');
+        $(this).addClass('active-pager-item');
+        $('.slider').find('.active-slide-item').fadeOut(300);
+        $('.slider').find('.active-slide-item').removeClass('active-slide-item');
+        window.setTimeout(function(){
+            $('.slider').find('.slider-item[index="'+index+'"]').fadeIn(300);
+            $('.slider').find('.slider-item[index="'+index+'"]').addClass('active-slide-item');
+        }, 300);
+    });
+    $('.e-modal').fadeIn(500);
+</script> -->
