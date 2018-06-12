@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 
 edonor/settings/local.py
+edonor/settings/local2.py
 edonor/settings/base.py
 # C extensions
 *.so
