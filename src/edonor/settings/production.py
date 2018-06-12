@@ -25,7 +25,7 @@ SECRET_KEY = '!k5s-51+cu=km+zse-4oqavb+)$b470hoikno^iixt)1v1(&(4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['edonor.herokuapp.com']
 
 
 # Application definition
@@ -72,6 +72,8 @@ TEMPLATES = [
     },
 ]
 
+
+
 WSGI_APPLICATION = 'edonor.wsgi.application'
 
 
@@ -85,6 +87,9 @@ DATABASES = {
     }
 }
 
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
