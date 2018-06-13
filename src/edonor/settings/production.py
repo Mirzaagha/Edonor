@@ -25,7 +25,20 @@ SECRET_KEY = os.environ.get('SECRET_KEY','!k5s-51+cu=km+zse-4oqavb+)$b470hoikno^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['edonor.herokuapp.com']
+ALLOWED_HOSTS = ['e-donor.herokuapp.com']
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'edonor@gmail.com>'
+
+ADMINS = (
+    ('Admin', EMAIL_HOST_USER),
+)
+MANAGERS = ADMINS
 
 
 # Application definition
