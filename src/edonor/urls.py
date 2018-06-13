@@ -19,12 +19,14 @@ from django.conf.urls.static import static
 from django.conf import settings
 from profiles.views import RegisterView
 from django.contrib.auth.views import LoginView, LogoutView
-	
+from django.views.generic import TemplateView	
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', RegisterView.as_view(), name='register'),
+    url(r'^success/$', TemplateView.as_view(template_name='modal.html')),
+
     url(r'^login/$', LoginView.as_view(), name='login'),
     url(r'^logout/$', LogoutView.as_view(), name='logout'), 
 ]

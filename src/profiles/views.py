@@ -14,7 +14,7 @@ User = get_user_model()
 class RegisterView(CreateView):
     form_class = RegisterForm
     template_name = 'registration.html'
-    success_url = '/'
+    success_url = '/success/'
     # success_message = "Your account was created successfully. Please check your email."
 
     def dispatch(self, *args, **kwargs):
