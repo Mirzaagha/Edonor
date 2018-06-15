@@ -12,33 +12,33 @@ class RegisterForm(forms.ModelForm):
 	fields, plus a repeated password."""
 	YEARS= [x for x in range(1940,2021)]
 
-	first_name 	 = forms.CharField(label='Adiniz', required=True)
-	last_name  	 = forms.CharField(label='Soyadiniz', required=True)
-	password1    = forms.CharField(label='Password', widget=forms.PasswordInput)
-	password2    = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
+	first_name 	 = forms.CharField(label='Adınız', required=True)
+	last_name  	 = forms.CharField(label='Soyadınız', required=True)
+	password1    = forms.CharField(label='Şifrə', widget=forms.PasswordInput)
+	password2    = forms.CharField(label='Şifrəni təsdiqlə', widget=forms.PasswordInput)
 	gender       = forms.ChoiceField(label='Cins', choices=GENDER_CHOICES, required=True)
 	blood_group  = forms.ChoiceField(label='Qan qrupunuz',choices=BLOOD_GROUP, required=True)
-	birth_date 	 = forms.DateField(label='Dogum gununuz',
+	birth_date 	 = forms.DateField(label='Doğum gününüz',
 	 widget=forms.SelectDateWidget(years=YEARS))
 	illness  = forms.ChoiceField(
-		label='Sarılıq, deri xesteliyi, göz xesteliyi, qanla ve ürekle bağlı xestelikler keçirmisinizmi?',
+		label='Sarılıq, dəri xəstəliyi, göz xəstəliyi, qanla ve ürəklə bağlı xəstəliklər keçirmisinizmi?',
 		 choices=ILLNESS_CHOICES, required=True)
 
 	illness1  = forms.ChoiceField(
-		label='6 ay erzinde emeliyyat olunmusunuzmuk?( yungul emeliyyat)',
+		label='6 ay ərzində əməliyyat olunmusunuzmu?( yüngül əməliyyat)',
 		 choices=ILLNESS_CHOICES, required=True)
 
 	illness2  = forms.ChoiceField(
-		label='Bedeninizde tato varmı? ( vardırsa eletdirdiyiniz vaxtdan minimum 1 il keçmelidir.)',
+		label='Bədəninizdə tato varmı? ( vardırsa elətdirdiyiniz vaxtdan ən azı 1 il keçməlidir.)',
 		 choices=ILLNESS_CHOICES, required=True)
 
-	weight = forms.IntegerField(min_value=0, max_value=1000, label='Weight in kg')
+	weight = forms.IntegerField(min_value=0, max_value=1000, label='Çəkiniz', required=True)
 	# weight = forms.IntegerField(label='Çəkiniz' , required=True)
-	height = forms.IntegerField(label='Boyunuz' , required=True)
+	height = forms.IntegerField(min_value=0, max_value=300,label='Boyunuz' , required=True)
 
 
 	last_blood_date= forms.DateField(
-		label='Daha evvel qan vermisinizse qan verme tarixini qeyd edin',
+		label='Daha əvvəl qan vermisinizsə qan vermə tarixini qeyd edin',
 	 widget=forms.SelectDateWidget(years=YEARS))
 	
 

@@ -44,6 +44,7 @@ class MyUserManager(BaseUserManager):
 USERNAME_REGEX = '^[a-zA-Z0-9@.+-]*$'
 class MyUser(AbstractBaseUser):
 	username = models.CharField(
+		verbose_name='İstifadəçi adı',
 		max_length=255,
 		validators=[
 			RegexValidator(
@@ -55,7 +56,7 @@ class MyUser(AbstractBaseUser):
 		unique=True,
 	)
 	email = models.EmailField(
-		verbose_name='email address',
+		verbose_name='E-mail',
 		max_length=255,
 		unique=True,
 	)
@@ -104,27 +105,5 @@ class MyUser(AbstractBaseUser):
 		# Simplest possible answer: Yes, always
 		return True
 
-	# @property
-	# def is_staff(self):
-	#     "Is the user a member of staff?"
-	#     # Simplest possible answer: All admins are staff
-	#     return self.is_admin
+	
 
-
-
-# class Profile(models.Model):
-# 	user = models.OneToOneField(settings.AUTH_USER_MODEL)
-# 	town = models.CharField(max_length=120,null=True,blank=True)
-# 	def __str__(self):
-# 		return str(self.user.username)
-
-
-
-# def post_save_user_model_receiver(sender, instance, created, *args, **kwargs):
-# 	if created:
-# 		try:
-# 			Profile.objects.create(user=instance)
-# 		except:
-# 			pass
-
-# post_save.connect(post_save_user_model_receiver, sender=settings.AUTH_USER_MODEL)

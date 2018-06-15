@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import get_user_model
-from django.views.generic import DetailView, CreateView
+from django.views.generic import DetailView, CreateView, View
 from django.http import Http404
 from .forms import RegisterForm
 from .models import MyUser
+
 # from django.contrib.messages.views import SuccessMessageMixin
 
 
@@ -22,6 +23,9 @@ class RegisterView(CreateView):
         #     return redirect("/logout")
         return super(RegisterView, self).dispatch(*args, **kwargs)
 
+class HomeView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'index.html', {})
 # class LoginView(CreateView):
 #     form_class = LoginForm
 #     template_name = 'login.html'

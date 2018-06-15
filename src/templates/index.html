@@ -33,8 +33,9 @@
 			<!-- <i class="fa fa-pinterest-p"></i> -->
 			<!-- <i class="fa fa-google-plus"></i> -->
 		</div>
-		<div class="item login-field">
-			<button class="btn btn-default"><i class="fa fa-user"></i> Giriş et</button>
+		<div class="container" align="right">
+			<!-- <button class="btn btn-default" src="{% url 'register' %}" ><i class="fa fa-user" ></i> Qeydiyyat </button> -->
+			<a href="/register/" class="btn btn-default" role="button">Qeydiyyat</a>
 		</div>
 	</div>
 	<div class="navbar">
@@ -77,8 +78,7 @@
     </div>
   </div>
 </body>
-			{% block content %}
-				{% endblock %}
+			
 <div class="e-modal" align="center">
 	<div class="e-modal-content">
 		<div class="e-modal-body">

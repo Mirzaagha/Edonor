@@ -69,17 +69,17 @@ Fb- qan.ver
 TƏŞƏKKÜRLƏR.</p>
 		</div>
 		<div class='col-sm-6 col-sm-offset-3 text-center'>
-			<h1>Register</h1>
+			<h1>Qeydiyyat</h1>
 			<hr/>
 			<form class='text-left' method="post" action="{% url 'register' %}">
 			{% csrf_token %}
 			{{ form|crispy }}
 
-			<input type="submit" value="Register" />
+			<input class='btn btn-primary' type="submit" value="Qeydiyyatdan keç" />
 			<input type="hidden" name="next" value="{{ next }}" />
 			</form>
-<!-- 			<p>Did you need to <a href='{% url "login" %}'>Login</a>?
- -->			</div>	
+			<p>Copyright © 2018 Edonor. All rights reserved.</p>
+			</div>	
 
 			</div>
 		</div>
